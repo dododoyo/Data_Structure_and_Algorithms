@@ -45,8 +45,8 @@ int main() {
   myList.displayList();
   std::cout << std::endl;
 
-  std::cout << "Deleted node 0"<<std::endl;
-  myList.deleteNode(0); // delete non-existant element
+  std::cout << "Deleted node 0.5"<<std::endl;
+  myList.deleteNode(0.5); // delete non-existant element
   myList.displayList();
   std::cout << std::endl;
 

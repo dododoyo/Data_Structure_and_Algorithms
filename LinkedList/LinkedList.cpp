@@ -8,6 +8,18 @@ class LinkedList{
       };
       ListNode *head;
   public:
+      LinkedList(void){
+        head = NULL;
+      }
+      ~LinkedList(void){
+        ListNode *currentNode,*nextNode;
+        currentNode = head;
+        while (! currentNode){
+          nextNode = currentNode->next;
+          delete currentNode;
+          currentNode = nextNode;
+        }
+      }
       void appendNode(float num){
         ListNode *nodeToAppend = new ListNode; // Allocate memory for nodeToAppend
         nodeToAppend->value = num;
@@ -28,7 +40,7 @@ class LinkedList{
         ListNode *nodeToInsert = new ListNode;
         nodeToInsert->value = number;
         nodeToInsert->next = NULL;
-        if (head == NULL){
+        if (!head){
           head = nodeToInsert;
         }
         else{
@@ -53,15 +65,15 @@ class LinkedList{
             return ;
           }
           if (head->value == number){
-            ListNode *newHead = head;
+            ListNode *newHead = head->next;
             delete head;
             head = newHead;
           }
           else{
             ListNode *currentNode = head;
             ListNode *prevNode = NULL;
-
-            while( currentNode != NULL and currentNode->value != number){
+            
+            while( currentNode != NULL && currentNode->value != number){
               prevNode = currentNode;
               currentNode = currentNode->next;
             }
@@ -70,11 +82,12 @@ class LinkedList{
               prevNode->next = currentNode->next;
               delete currentNode;
             }
+            // if the current node is NULL it means the node to delete is not found and we do nothing
             return;
           }
         };
       void displayList(void){
-        ListNode *currentNode = head->next;
+        ListNode *currentNode = head;
         while (currentNode){
           std::cout << currentNode->value << "->";
           currentNode = currentNode->next;

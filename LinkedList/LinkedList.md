@@ -55,3 +55,4 @@ So, to summarize:
 - A pointer is just a value that happens to be a memory address
   
 - When I use displayList is displays n+1 elements (this happened when current node started from head and not head->next)
+
