@@ -7,6 +7,7 @@ class LinkedList{
         struct ListNode *next;
       };
       ListNode *head;
+      
   public:
       LinkedList(void){
         head = NULL;
