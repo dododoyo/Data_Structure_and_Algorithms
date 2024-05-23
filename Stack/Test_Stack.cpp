@@ -1,8 +1,9 @@
 #include <iostream>
-#include "Stack.cpp"
+#include "./LinkedListStack.cpp"
+#include "./ArrayStack.cpp"
 
 int main() {
-  Stack stack(5);
+  LinkedListStack stack(5);
   stack.Push(5.0);
   stack.Push(6.5);
   stack.DisplayStack();

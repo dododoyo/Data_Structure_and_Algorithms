@@ -1,17 +1,17 @@
 #include <iostream>
-class Stack{
+class ArrayStack {
   private:  
       int maxTop;
       int top;
       double* values;
 
   public:
-      Stack(int size){
+      ArrayStack(int size){
         maxTop = size-1;
         values = new double[size];
         top = -1;
       };
-      ~Stack(){delete [] values;};
+      ~ArrayStack(){delete [] values;};
       bool IsEmpty() {return top == -1;}
       bool IsFull() {return top == maxTop;}
       double Pop(){
